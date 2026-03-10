@@ -1,0 +1,40 @@
+{
+  "star-trails": {
+    "label": "星轨",
+    "config": {
+      "long_exposure": "长曝光",
+      "path_length": "路径长度",
+      "twinkle": "闪烁",
+      "turbulence": "波动",
+      "trail_type": "轨道类型",
+      "trail_length": "轨迹长度",
+      "radial_speed": "径向速度",
+      "palette": "色板",
+      "rotate_speed": "旋转速度",
+      "density": "密度",
+      "star_size": "星星大小",
+      "color_mode": "色彩模式",
+      "star_color": "星星颜色",
+      "glow": "发光强度",
+      "center_mode": "中心模式",
+      "render_mode": "渲染模式",
+      "star_brightness": "星星亮度",
+      "center_x": "中心 X",
+      "center_y": "中心 Y"
+    },
+    "options": {
+      "single": "单色",
+      "multi": "多色",
+      "center": "固定中心",
+      "mouse": "跟随鼠标",
+      "radial": "径向",
+      "concentric": "同心圆",
+      "classic": "经典",
+      "rainbow": "彩虹",
+      "ocean": "海洋",
+      "fire": "火焰",
+      "persistence": "残留",
+      "path": "路径"
+    }
+  }
+}

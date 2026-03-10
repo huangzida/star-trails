@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => {
   const isPlayground = mode === 'playground'
 
   return {
-    base: isPlayground ? '/fireworks/' : './',
+    base: isPlayground ? '/star-trails/' : './',
     root: isPlayground ? 'playground' : '.',
     plugins: [
       vue(),
@@ -25,34 +25,37 @@ export default defineConfig(({ mode }) => {
     assetsInclude: ['**/*.glsl'],
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url))
-      }
-    },
-    build: isPlayground ? {
-      outDir: '../dist-play',
-      emptyOutDir: true,
-    } : {
-      lib: {
-        entry: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
-        name: 'BgEffectsFireworks',
-        formats: ['es', 'umd'],
-        fileName: (format) => `index.${format === 'es' ? 'js' : 'umd.cjs'}`,
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
-      rollupOptions: {
-        external: ['vue', 'ogl'],
-        output: {
-          globals: {
-            vue: 'Vue',
-            ogl: 'OGL',
+    },
+    build: isPlayground
+      ? {
+          outDir: '../dist-play',
+          emptyOutDir: true,
+        }
+      : {
+          lib: {
+            entry: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
+            name: 'BgEffectsStarTrails',
+            formats: ['es', 'umd'],
+            fileName: (format) => `index.${format === 'es' ? 'js' : 'umd.cjs'}`,
+          },
+          rollupOptions: {
+            external: ['vue'],
+            output: {
+              globals: {
+                vue: 'Vue',
+              },
+            },
           },
         },
-      },
-    },
-    server: isPlayground ? {
-      port: 5174,
-      fs: {
-        allow: ['..']
-      }
-    } : undefined
+    server: isPlayground
+      ? {
+          port: 5174,
+          fs: {
+            allow: ['..'],
+          },
+        }
+      : undefined,
   }
 })

@@ -1,0 +1,40 @@
+{
+  "star-trails": {
+    "label": "Star Trails",
+    "config": {
+      "long_exposure": "Long Exposure",
+      "path_length": "Path Length",
+      "twinkle": "Twinkle",
+      "turbulence": "Turbulence",
+      "trail_type": "Trail Type",
+      "trail_length": "Trail Length",
+      "radial_speed": "Radial Speed",
+      "palette": "Palette",
+      "rotate_speed": "Rotate Speed",
+      "density": "Density",
+      "star_size": "Star Size",
+      "color_mode": "Color Mode",
+      "star_color": "Star Color",
+      "glow": "Glow",
+      "center_mode": "Center Mode",
+      "render_mode": "Render Mode",
+      "star_brightness": "Star Brightness",
+      "center_x": "Center X",
+      "center_y": "Center Y"
+    },
+    "options": {
+      "single": "Single",
+      "multi": "Multi",
+      "center": "Center",
+      "mouse": "Mouse",
+      "radial": "Radial",
+      "concentric": "Concentric",
+      "classic": "Classic",
+      "rainbow": "Rainbow",
+      "ocean": "Ocean",
+      "fire": "Fire",
+      "persistence": "Persistence",
+      "path": "Path"
+    }
+  }
+}

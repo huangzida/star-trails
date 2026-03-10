@@ -1,73 +1,59 @@
-# @bg-effects/fireworks
+# @bg-effects/star-trails
 
 [English](./README.md) | [简体中文](./README_CN.md)
 
-A high-performance fireworks background effect built with OGL and Vue.
+基于 Vue 的星轨背景特效组件，支持路径渲染与残影渲染两种模式，并内置调试面板。
 
-[Live Demo](https://huangzida.github.io/fireworks/)
+[Live Demo](https://huangzida.github.io/star-trails/)
 
 ---
 
-### Features
+### 功能模块
 
-- 🚀 **High Performance**: Built with OGL (a lightweight WebGL library) for smooth rendering.
-- 🎨 **Highly Customizable**: Multiple shapes (heart, star, butterfly, etc.), launch modes, and color options.
-- 🛠️ **Debug Mode**: Built-in visual debug panel for real-time adjustments.
-- 📦 **Ready to Use**: Easy-to-use Vue component with simple configuration.
+- 核心能力：提供 `StarTrails` 组件与 `StarTrailsEngine` 渲染引擎，支持高密度星轨动画。
+- 渲染模式：支持 `path`（路径）与 `persistence`（残影）两种模式，可切换长曝光效果。
+- 交互能力：支持中心点固定或跟随鼠标，支持随机化参数与调试面板实时调参。
+- 颜色系统：支持单色与多色调色盘（`classic` / `rainbow` / `ocean` / `fire`）。
 
-### Installation
+### 安装
 
 ```bash
-pnpm add @bg-effects/fireworks ogl
+pnpm add @bg-effects/star-trails
 ```
 
-> **Note**: `ogl` is a peer dependency and needs to be installed manually.
+### 主要 API
 
-### Usage
+- 组件导出：`StarTrails`（默认导出同名组件）。
+- 调试面板：`ConfigPanel`。
+- 元信息：`meta`（含默认配置、预设与随机化逻辑）。
+- 类型导出：`StarTrailsConfig` 及相关联合类型。
+
+### 使用示例
 
 ```vue
-<script setup>
-import { Fireworks } from '@bg-effects/fireworks'
+<script setup lang="ts">
+import { StarTrails } from '@bg-effects/star-trails'
 </script>
 
 <template>
   <div style="width: 100vw; height: 100vh; background: #000;">
-    <Fireworks 
-      :firework-count="50"
-      shape="heart"
+    <StarTrails
+      :density="1.2"
+      render-mode="path"
+      trail-type="radial"
       color-mode="multi"
+      color-palette="rainbow"
+      :debug="true"
+      lang="zh-CN"
     />
   </div>
 </template>
 ```
 
-### Props
-
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `firework-count` | `number` | `30` | Number of fireworks |
-| `speed` | `number` | `1.0` | Animation speed |
-| `size` | `number` | `2.0` | Particle size |
-| `shape` | `string` | `'normal'` | Firework shape (see below) |
-| `launch-mode` | `string` | `'random'` | Launch mode (see below) |
-| `color-mode` | `string` | `'multi'` | Color mode (`'single'` or `'multi'`) |
-| `color` | `string` | `'#ff0000'` | Color when color mode is `'single'` |
-| `debug` | `boolean` | `false` | Enable debug panel |
-| `lang` | `'zh-CN' \| 'en'` | `'zh-CN'` | UI language |
-
-#### Supported Shapes (`shape`)
-`normal`, `circular`, `heart`, `star`, `butterfly`, `spiral`, `ring`, `doubleRing`, `atom`, `trefoil`, `clover`, `cross`, `saturn`, `hexagram`, `astroid`, `gear`, `fermat`, `folium`, `random`
-
-#### Launch Modes (`launchMode`)
-`random`, `burst`, `wave`, `tide`, `simultaneous`, `pendulum`
-
-### Local Development
+### 本地开发
 
 ```bash
-# Install dependencies
 pnpm install
-
-# Start development server
 pnpm dev
 ```
 
