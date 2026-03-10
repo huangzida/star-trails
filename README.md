@@ -2,33 +2,33 @@
 
 [English](./README.md) | [简体中文](./README_CN.md)
 
-基于 Vue 的星轨背景特效组件，支持路径渲染与残影渲染两种模式，并内置调试面板。
+A Vue-based star trails background effect component with both path and persistence rendering modes, plus a built-in debug panel.
 
 [Live Demo](https://huangzida.github.io/star-trails/)
 
 ---
 
-### 功能模块
+### Features
 
-- 核心能力：提供 `StarTrails` 组件与 `StarTrailsEngine` 渲染引擎，支持高密度星轨动画。
-- 渲染模式：支持 `path`（路径）与 `persistence`（残影）两种模式，可切换长曝光效果。
-- 交互能力：支持中心点固定或跟随鼠标，支持随机化参数与调试面板实时调参。
-- 颜色系统：支持单色与多色调色盘（`classic` / `rainbow` / `ocean` / `fire`）。
+- Core capability: Includes the `StarTrails` component and `StarTrailsEngine` renderer for dense star-trail animations.
+- Rendering modes: Supports both `path` and `persistence` modes, with optional long-exposure effects.
+- Interactivity: Supports fixed center or mouse-follow center, plus randomization and real-time debug tuning.
+- Color system: Supports single-color mode and multi-palette mode (`classic` / `rainbow` / `ocean` / `fire`).
 
-### 安装
+### Installation
 
 ```bash
 pnpm add @bg-effects/star-trails
 ```
 
-### 主要 API
+### Main API
 
-- 组件导出：`StarTrails`（默认导出同名组件）。
-- 调试面板：`ConfigPanel`。
-- 元信息：`meta`（含默认配置、预设与随机化逻辑）。
-- 类型导出：`StarTrailsConfig` 及相关联合类型。
+- Component export: `StarTrails` (also the default export).
+- Debug panel: `ConfigPanel`.
+- Metadata: `meta` (contains default config, presets, and randomization logic).
+- Type exports: `StarTrailsConfig` and related union types.
 
-### 使用示例
+### Usage Example
 
 ```vue
 <script setup lang="ts">
@@ -50,7 +50,7 @@ import { StarTrails } from '@bg-effects/star-trails'
 </template>
 ```
 
-### 本地开发
+### Local Development
 
 ```bash
 pnpm install
